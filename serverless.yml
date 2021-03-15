@@ -43,10 +43,10 @@ functions:
   badgeHandler:
     handler: badgeHandler.handle
     memorySize: 128
-    timeout: 5
+    timeout: 10
     environment:
-      API_ID: ${env:VERACODE_API_KEY}
-      API_KEY: ${env:VERACODE_API_SECRET}
+      VERACODE_API_KEY: ${env:VERACODE_API_KEY}
+      VERACODE_API_SECRET: ${env:VERACODE_API_SECRET}
     events:
       - http:
           path: /badge

@@ -1,9 +1,9 @@
 'use strict';
 
-export function getApiKey() {
+exports.getApiKey = () => {
     return process.env.VERACODE_API_KEY;
 }
 
-export function getApiSecret() {
+exports.getApiSecret = () => {
     return process.env.VERACODE_API_SECRET;
 }
