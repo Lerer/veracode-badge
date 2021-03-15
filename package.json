@@ -1,0 +1,20 @@
+{
+  "name": "veracode-badge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy-dev": "sls deploy --stage dev --region ap-southeast-2",
+    "deploy": "sls deploy --stage prod --region ap-southeast-2",
+    "generate-permissions": "node -r dotenv/config --trace-warnings permissions/parsePermissions.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "badge-maker": "^3.3.0",
+    "dotenv": "^8.2.0"
+  }
+}

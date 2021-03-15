@@ -1,0 +1,56 @@
+service: veracode-badges
+# app and org for use with dashboard.serverless.com
+app: my-veracode
+org: yaakovlerer
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+frameworkVersion: '2'
+
+useDotenv: true
+
+package:
+  exclude:
+    - test/**
+    - '**/*.test.js'
+    - 'empty.env'
+    - resources/**
+    - permissions/**
+
+custom:
+  prod:
+    Stack: ExampleSite
+    LogLevel: info
+  dev:
+    Stack: ExampleSite
+    LogLevel: debug
+  settings:
+    logLevel: ${self:custom.${opt:stage, self:provider.stage, 'dev'}.LogLevel}
+
+provider:
+  name: aws
+  stage: dev # default settings
+  runtime: nodejs12.x
+  region: ap-southeast-2
+  apiGateway:
+    shouldStartNameWithService: true
+  environment: ${self:custom.settings}
+  lambdaHashingVersion: 20201221
+
+
+functions:
+  # Listen to a call from GitHub Workflow 
+  badgeHandler:
+    handler: badgeHandler.handle
+    memorySize: 128
+    timeout: 5
+    environment:
+      API_ID: ${env:VERACODE_API_KEY}
+      API_KEY: ${env:VERACODE_API_SECRET}
+    events:
+      - http:
+          path: /badge
+          method: get
+
+
+
