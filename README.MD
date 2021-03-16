@@ -7,12 +7,13 @@ __Note__ - The solution require AWS account for deployment
 
 ## Example
 <p align="center">
-  <img src="https://github.com/lerer/veracode-badge/blob/master/resources/policy_pass.png?raw=true" width="350px" alt="Veracode Policy Pass Badge"/>
+  <img src="https://github.com/lerer/veracode-badge/blob/main/resources/policy_pass.png?raw=true" height="50" alt="Veracode Policy Pass Badge"/>
 </p>
 
 <p align="center">
-  <img src="https://github.com/lerer/veracode-badge/blob/master/resources/policy_did_not_pass.png?raw=true" width="350px" alt="Veracode Policy Fail Badge"/>
+  <img src="https://github.com/lerer/veracode-badge/blob/main/resources/policy_did_not_pass.png?raw=true" height="50" alt="Veracode Policy Fail Badge"/>
 </p>
+
 
 ## Instruction:
 To utilize the content, you will need to implement the following:
