@@ -1,4 +1,4 @@
-
+[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com) [![Maintained by Yaakov Lerer](https://img.shields.io/badge/maintained%20by-Lerer-brightgreen)](http://www.github.com/lerer) [![GitHub issues](https://img.shields.io/github/issues/lerer/veracode-badge/bug?color=red)](https://github.com/Lerer/veracode-badge/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 
 # Veracode Badges  
 For README and other git repository decoration
