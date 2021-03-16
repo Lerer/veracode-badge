@@ -134,6 +134,11 @@ __Endpoints:__
 __Functions:__
   - **badgeHandler:** {project}-{stage}-badgeHandler   
     
+## Uninstall
+
+To remove your solution entirely from AWS, simply run the following command from the terminal: 
+   - for `dev` deployment: `npm run remove-dev`
+   - for `prod` deployment: `npm run remove`
 
      
        

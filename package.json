@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy-dev": "sls deploy --stage dev --region ap-southeast-2",
-    "deploy": "sls deploy --stage prod --region ap-southeast-2",
-    "generate-permissions": "node -r dotenv/config --trace-warnings permissions/parsePermissions.js"
+    "deploy-dev": "serverless deploy --stage dev --region ap-southeast-2",
+    "deploy": "serverless deploy --region ap-southeast-2",
+    "generate-permissions": "node -r dotenv/config --trace-warnings permissions/parsePermissions.js",
+    "remove-dev": "serverless remove --stage dev ",
+    "remove": "serverless remove"
   },
   "keywords": [],
   "author": "",

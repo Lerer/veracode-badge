@@ -22,6 +22,7 @@
           "cloudformation:UpdateStack"
         ],
         "Resource": [
+          "arn:aws:cloudformation:<AWSRegion>:<Account_ID>:stack/<Service>-prod/*",
           "arn:aws:cloudformation:<AWSRegion>:<Account_ID>:stack/<Service>-<Stage>/*"
         ]
       },
@@ -78,7 +79,8 @@
           "lambda:Update*"
         ],
         "Resource": [
-          "arn:aws:lambda:<AWSRegion>:<Account_ID>:function:<Service>-<Stage>-*"
+          "arn:aws:lambda:<AWSRegion>:<Account_ID>:function:<Service>-<Stage>-*",
+          "arn:aws:lambda:<AWSRegion>:<Account_ID>:function:<Service>-prod-*"
         ]
       },
       {
@@ -129,7 +131,8 @@
           "events:Delete*"
         ],
         "Resource": [
-          "arn:aws:events:<AWSRegion>:<Account_ID>:rule/<Service>-<Stage>-<AWSRegion>"
+          "arn:aws:events:<AWSRegion>:<Account_ID>:rule/<Service>-<Stage>-<AWSRegion>",
+          "arn:aws:events:<AWSRegion>:<Account_ID>:rule/<Service>-prod-<AWSRegion>"
         ]
       },
       {
@@ -138,7 +141,8 @@
           "events:DescribeRule"
         ],
         "Resource": [
-          "arn:aws:events:<AWSRegion>:<Account_ID>:rule/<Service>-<Stage>-*"
+          "arn:aws:events:<AWSRegion>:<Account_ID>:rule/<Service>-<Stage>-*",
+          "arn:aws:events:<AWSRegion>:<Account_ID>:rule/<Service>-prod-*"
         ]
       },
       {
@@ -162,7 +166,10 @@
         "Resource": [
           "arn:aws:iam::<Account_ID>:role/<Service>-<Stage>-IamRoleCustomResourcesLambdaEx-*",
           "arn:aws:iam::<Account_ID>:role/<Service>-<Stage>-<AWSRegion>-lambdaRole",
-          "arn:aws:iam::<Account_ID>:role/<Service>-<Stage>-EnterpriseLogAccessIamRole-*"
+          "arn:aws:iam::<Account_ID>:role/<Service>-<Stage>-EnterpriseLogAccessIamRole-*",
+          "arn:aws:iam::<Account_ID>:role/<Service>-prod-IamRoleCustomResourcesLambdaE-*",
+          "arn:aws:iam::<Account_ID>:role/<Service>-prod-<AWSRegion>-lambdaRole",
+          "arn:aws:iam::<Account_ID>:role/<Service>-prod-EnterpriseLogAccessIamRole-*"
         ]
       },
       {
