@@ -12,7 +12,7 @@ const request = (inputMethod,host,path, params) => {
     let queryString = '';
     if(params !== null && Object.keys(params).length>0) {
         const preJoined = Object.entries(params).map(([key, val]) => {
-            return `${key}=${String(val).replace(/\s/g, "+")}`;
+            return `${key}=${String(val)}`;//.replace(/\s/g, "+")}`;
         });
         
         queryString = '?' + preJoined.join('&');
