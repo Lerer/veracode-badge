@@ -58,8 +58,6 @@ We want to make sure the badge API only expose information for specific Applicat
    - AWS_Region=`<Your AWS deployment region>`
    - AWS_Account_ID=`<Your AWS Account ID (Numeric)>`
    - Stage=`<dev|prod>`
-   - 
-
 
 ### 4. AWS Policy for the deployment of the solution
 In order to provided the minimun policy required for the deployment of the solutions, we will need to generate a Policy. 
@@ -113,7 +111,7 @@ Serverless framework has few options to configure it. The method I tested was a 
    * look for the `Service Information` section and note the `endpoint` which should look similar to: 
      * `GET - https://n91dqmmhqy.execute-api.ap-southeast-2.amazonaws.com/dev/badge`
 
-### 7.) Update your `.md` files
+### 7. Update your `.md` files
 
 Add the following text to the top of your `README.md` file
 ```
