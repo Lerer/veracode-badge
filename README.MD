@@ -57,8 +57,8 @@ We want to make sure the badge API only expose information for specific Applicat
    - VERACODE_API_SECRET=`<From the credentials in #1.2>`
    - AWS_Region=`<Your AWS deployment region>`
    - AWS_Account_ID=`<Your AWS Account ID (Numeric)>`
-   - Stage=`<dev|prod>`
-
+   - Stage=`<dev|prod>`  
+  
 ### 4. AWS Policy for the deployment of the solution
 In order to provided the minimun policy required for the deployment of the solutions, we will need to generate a Policy. 
 
@@ -99,23 +99,21 @@ Serverless framework has few options to configure it. The method I tested was a 
     ```JSON
     "scripts": {
       ...
-      "deploy-dev": "sls deploy --stage dev --region ap-southeast-2",
-      "deploy": "sls deploy --stage prod --region ap-southeast-2",  
+      "deploy-dev": "serverless deploy --stage dev --region ap-southeast-2",
+      "deploy": "serverless deploy --region ap-southeast-2",
       ...
     }
     ```
-2) Run the deployment command
-   * If you deploy in dev: __`npm run deploy-dev`__
-   * If you deploy as production: __`npm run deploy`__
+2) Run the deployment command: __`npm run deploy`__
 3) Pay attenbtion to the deployment output for output and any error/s
    * look for the `Service Information` section and note the `endpoint` which should look similar to: 
-     * `GET - https://n91dqmmhqy.execute-api.ap-southeast-2.amazonaws.com/dev/badge`
+     * `GET - https://n91dqmmhqy.execute-api.ap-southeast-2.amazonaws.com/prod/badge`
 
 ### 7. Update your `.md` files
 
 Add the following text to the top of your `README.md` file
 ```
-![Veracode SAST Policy compliance](https://n91dqmmhqy.execute-api.ap-southeast-2.amazonaws.com/dev/badge?appname=<Veracode Application Name>)
+![Veracode SAST Policy compliance](https://n91dqmmhqy.execute-api.ap-southeast-2.amazonaws.com/prod/badge?appname=<Veracode Application Name>)
 ```
 
 __Note__ - replace the `<Veracode Application Name>` with your Veracode Application ptrofile name 
@@ -134,9 +132,7 @@ __Functions:__
     
 ## Uninstall
 
-To remove your solution entirely from AWS, simply run the following command from the terminal: 
-   - for `dev` deployment: `npm run remove-dev`
-   - for `prod` deployment: `npm run remove`
+To remove your solution entirely from AWS, simply run the following command from the terminal: `npm run remove`
 
      
        
