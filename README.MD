@@ -53,8 +53,8 @@ We want to make sure the badge API only expose information for specific Applicat
 1. Clone this repository: `git clone https://github.com/lerer/veracode-badge`
 2. Import dependencies by executing `npm install`
 3. Copy `empty.env` to `.env` and update the attributes
-   - VERACODE_API_KEY=`<From the credentials in #1.2>`
-   - VERACODE_API_SECRET=`<From the credentials in #1.2>`
+   - VERACODE_API_KEY=`<From the credentials in #1.5>`
+   - VERACODE_API_SECRET=`<From the credentials in #1.5>`
    - AWS_Region=`<Your AWS deployment region>`
    - AWS_Account_ID=`<Your AWS Account ID (Numeric)>`
    - Stage=`<dev|prod>`  
