@@ -46,7 +46,7 @@ const getApplicationByLegacyId = async (legacyAppId) => {
 
 const getApplicationByName = async (appName) => {
     // legacy_id
-    console.info(`getApplicationByName - START - ${appName}`);
+    console.info(`getApplicationByName - START - ${escape(appName)}`);
     let application = {};
     if (appName && appName.length>0) {
         try {
@@ -61,7 +61,7 @@ const getApplicationByName = async (appName) => {
             if (applications.length===1){
                 application = applications[0];
             } else {
-                console.info(`getApplicationByName - Could not find the application ny name [${appName}]`);
+                console.info(`getApplicationByName - Could not find the application ny name [${escape(appName)}]`);
                 console.log(response.data);
             }
         } catch (error) {

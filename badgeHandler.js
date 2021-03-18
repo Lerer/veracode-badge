@@ -12,9 +12,10 @@ const POLICY_COMPLIANCE_STATUSES = [
     {value: 'PASSED',label:'PASSED',color: '#8cbe3f'}
 ];
 
+const BADGE_STYLE = 'flat';
+
 exports.handle = async (event,context) => {
-    console.log(event);
-    console.log(event.queryStringParameters);
+    console.log(event.queryStringParameters ? JSON.stringify(event.queryStringParameters) : 'no query params');
     let badgeSVG;
     const appName = event.queryStringParameters.appname;
     if (!appName) {
@@ -48,7 +49,7 @@ const generateErrorBadge = (message) => {
     const format = {
         label: `VERACODE`,
         message: `${message}`,
-        style: 'plastic',
+        style: BADGE_STYLE,
         labelColor: '#00b2e5',
         color:'grey'
     }
@@ -73,7 +74,7 @@ const generateBadge = (appName,sandboxName,complianceStatusObj) => {
         label: `VERACODE${labelPostfix}`,
         message,
         color: complianceStatusObj.color,
-        style: 'plastic',
+        style: BADGE_STYLE,
         labelColor: '#00b2e5'
     }
     try {
