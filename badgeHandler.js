@@ -34,7 +34,7 @@ exports.handle = async (event,context) => {
         }
     }
     
-    const response = {
+    return {
         headers: {
             "Content-Type": "image/svg+xml",
             "Cache-Control": "no-cache"
@@ -42,7 +42,6 @@ exports.handle = async (event,context) => {
         statusCode: 200,
         body: badgeSVG
     };
-    return response;
 }
 
 const generateErrorBadge = (message) => {
